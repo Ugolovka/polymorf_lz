@@ -4,7 +4,7 @@ class DatasetProcessor:
     def __init__(self, input_file):
         self.data = pd.read_csv(input_file)
 
-    def delete_duplicates(self):
+    def __invert__(self):
         initial_count = len(self.data)
         self.data = self.data.drop_duplicates()
         removed_count = initial_count - len(self.data)
